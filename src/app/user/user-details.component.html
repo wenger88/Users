@@ -34,9 +34,15 @@
         <div class="row">
             <div class="user-skills">
                 <h3>Skills</h3>
-                <ul>
-                    <li *ngFor="let skill of user.skills">
-                        {{skill.title}} {{skill.rating}}
+                <ul class="list-group">
+                    <li style="line-height: 63px;" class="list-group-item clearfix" *ngFor="let skill of user.skills">
+                        <div class="pull-left">
+                            {{skill.title}}
+                        </div>
+                        <div class="pull-right">
+                            <rating [max]="10" [(ngModel)]="skill.rating" [readonly]="true"></rating>
+                        </div>
+
                     </li>
                 </ul>
             </div>

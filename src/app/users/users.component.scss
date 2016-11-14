@@ -7,8 +7,6 @@
   overflow: hidden;
   position: relative;
   font-family: "Segoe UI";
-  max-height: 320px;
-  height: 300px;
   .user-card-header{
     background: #4183D7;
     border-top-left-radius: 10px;
@@ -23,6 +21,7 @@
   .user-card-image{
     padding: 10px;
     background: rgba(235,151,78,.2);
+    min-height: 148px;
     img{
       margin: 0 auto;
       border-radius: 10px;
@@ -37,6 +36,11 @@
     font-style: italic;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    p{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &:hover{

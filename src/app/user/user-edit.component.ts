@@ -43,7 +43,7 @@ export class UserEditComponent implements OnInit{
                 if (status){
                     this.userForm.form.markAsPristine();
                     /*this.router.navigate(['/users']);*/
-                    console.log(this.userForm.value);
+                    console.log(this.userForm);
                 }else {
                     this.errorMessage = 'Unable to save customer';
                 }
@@ -62,9 +62,14 @@ export class UserEditComponent implements OnInit{
             'rating': rating.value
         }
 
-        this.user.skills.push(skill);
-        title.value = null;
-        rating.value = null;
+        if (skill.title != "" && skill.rating != ""){
+            console.log(title);
+            this.user.skills.push(skill);
+            title.value = null;
+            rating.value = null;
+        }else{
+            console.log('Empty Fields!');
+        }
 
         console.log(skill);
 

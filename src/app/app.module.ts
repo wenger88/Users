@@ -18,6 +18,7 @@ import {UserEditComponent} from "./user/user-edit.component";
 import {SkillsComponent} from "./skills/skills.component";
 
 import {DataService} from "./core/service/data.service";
+import {RatingModule} from "ng2-rating";
 
 @NgModule({
 	imports: [
@@ -25,6 +26,7 @@ import {DataService} from "./core/service/data.service";
 		HttpModule,
 		BrowserModule,		
 		SharedModule,
+		RatingModule,
 		routing
 	],
 	declarations: [

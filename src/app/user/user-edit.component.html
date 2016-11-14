@@ -117,11 +117,13 @@
                                  <div class="col-sm-6 ">
                                      <div class="form-group pull-right">
                                          <label>Rating</label>
-                                         <input type="number" max="10" min="1" class="form-control " name="rating"  ngModel #rating>
+                                         <input type="number" max="10" min="1" class="form-control" name="rating" ngModel  #rating>
                                      </div>
                                  </div>
 
-                                 <button type="button" class="btn btn-default" (click)="addSkill(title, rating)">Add Skill</button>
+                                 <button type="button"
+                                         class="btn btn-default"
+                                         (click)="addSkill(title, rating)" [disabled]="title.value == '' || rating.value == ''">Add Skill</button>
 
                              </div>
 
