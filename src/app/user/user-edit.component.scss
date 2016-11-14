@@ -1,0 +1,29 @@
+
+.user-edit-profile{
+  font-family: "Segoe UI";
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  h2{
+    background: #4183D7;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    padding: 10px 5px;
+  }
+  fieldset{
+    margin: 20px 0;
+    legend{
+      font-weight: bold;
+      color: #555;
+    }
+    .col-sm-6{
+      padding: 0;
+      .form-group{
+        width: 90%;
+      }
+    }
+  }
+
+
+}

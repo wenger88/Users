@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-3" *ngFor="let user of users">
+            <div class="user-card">
+                <div class="user-card-header">
+                    <h4>{{user.firstName}} {{user.lastName}}</h4>
+                </div>
+                <div class="user-card-image">
+                    <img class="img-responsive" [src]="user.avatar" alt="">
+                </div>
+                <div class="user-card-info">
+                    <p>{{user.jobTitle}}</p>
+                    <p>{{user.city}}, {{user.state}}</p>
+                    <p>{{user.age}} years old</p>
+                </div>
+                <div class="user-card-overlay">
+                    <a [routerLink]="['/user-details', user.id]">
+                        Details
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>
