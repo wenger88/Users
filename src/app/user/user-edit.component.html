@@ -87,7 +87,34 @@
                          <fieldset>
                              <legend>Skills</legend>
 
-                             <div class="clearfix" *ngFor="let skill of user.skills; let i = index">
+                             <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Skill title</th>
+                                            <th>Skill rating</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let skill of user.skills; let i = index">
+                                            <td>
+                                                <input type="text" class="form-control" name="title-{{i}}" [(ngModel)]="skill.title" #title="ngModel" required>
+                                                <div class="alert alert-danger" [hidden]="title.valid">Title is required</div>
+                                            </td>
+                                            <td>
+                                                <input type="number" max="10" min="1" class="form-control " name="rating-{{i}}" [(ngModel)]="skill.rating" #rating="ngModel" required>
+                                                <div class="alert alert-danger" [hidden]="rating.valid">Rating is required</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-danger" type="button" (click)="removeSkill(i)">X</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                             </div>
+
+                             <!--<div class="clearfix" *ngFor="let skill of user.skills; let i = index">
                                  <div class="col-sm-6">
                                      <div class="form-group pull-left">
                                          <label>Title</label>
@@ -102,7 +129,7 @@
                                          <div class="alert alert-danger" [hidden]="rating.valid">Rating is required</div>
                                      </div>
                                  </div>
-                             </div>
+                             </div>-->
 
 
                             <!--<user-skill *ngFor="let skill of user.skills; let i = index" [skill]="skill"></user-skill>-->

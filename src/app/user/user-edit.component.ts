@@ -42,7 +42,7 @@ export class UserEditComponent implements OnInit{
             .subscribe((status: boolean) => {
                 if (status){
                     this.userForm.form.markAsPristine();
-                    /*this.router.navigate(['/users']);*/
+                    this.router.navigate(['/user-details', this.user.id]);
                     console.log(this.userForm);
                 }else {
                     this.errorMessage = 'Unable to save customer';
@@ -74,5 +74,11 @@ export class UserEditComponent implements OnInit{
         console.log(skill);
 
     }
+
+    removeSkill(i: number){
+        this.user.skills.splice(i, 1);
+        this.userForm.form.markAsDirty();
+    }
+
 
 }
