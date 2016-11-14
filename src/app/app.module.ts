@@ -9,13 +9,13 @@ import { AppComponent }   from './app.component';
 import { PuppiesComponent } from './puppies';
 import { OttersComponent } from './otters';
 import { KittensComponent } from './kittens';
-
 import { SharedModule } from './shared';
 import {UsersComponent} from "./users/users.component";
 import {UserComponent} from "./user/user.component";
 import {UserDetailsComponent} from "./user/user-details.component";
 import {UserEditComponent} from "./user/user-edit.component";
 import {SkillsComponent} from "./skills/skills.component";
+import {UserCreateComponent} from "./user/user-create.component";
 
 import {DataService} from "./core/service/data.service";
 import {RatingModule} from "ng2-rating";
@@ -38,8 +38,8 @@ import {RatingModule} from "ng2-rating";
 		UserComponent,
 		UserDetailsComponent,
 		UserEditComponent,
-        SkillsComponent
-
+        SkillsComponent,
+        UserCreateComponent
 	],
 	providers: [
 		appRoutingProviders,

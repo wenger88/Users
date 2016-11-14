@@ -4,7 +4,7 @@
 
 
 import {Injectable} from "@angular/core";
-import {Http, Response} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {IUsers} from "../../shared/interfaces";
 import {Observable} from "rxjs";
 import 'rxjs/Rx'
@@ -40,11 +40,43 @@ export class DataService{
             .catch(this.handleError);
     }
 
+    /*createUser(user: IUsers){
 
+        let body = JSON.stringify({
+            'id': user.id,
+            'firstName': user.firstName,
+            'lastName': user.lastName,
+            'email': user.email,
+            'age': user.age,
+            'jobTitle': user.jobTitle,
+            'bio': user.bio,
+            'avatar': user.avatar,
+            'address': user.address,
+            'city': user.city,
+            'state': user.city,
+            'skills': user.skills,
 
+        })
 
+        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
+        let options = new RequestOptions({ headers: headers, method: "post" });
 
+        return this.http.post(this.usersUrl, body, options)
+            .map(res => res.json())
+            .catch(this.handleError);
+
+    }*/
+
+    addUser (body: Object): Observable<IUsers[]> {
+        let bodyString = JSON.stringify(body); // Stringify payload
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
+
+        return this.http.post(this.usersUrl, body, options) // ...using post request
+            .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+            .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }
 
 
 

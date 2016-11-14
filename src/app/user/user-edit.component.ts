@@ -6,7 +6,7 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {DataService} from "../core/service/data.service";
 import {IUsers} from "../shared/interfaces";
-import {NgForm, FormGroup} from "@angular/forms";
+import {NgForm} from "@angular/forms";
 import {ViewChild} from "@angular/core";
 
 @Component({

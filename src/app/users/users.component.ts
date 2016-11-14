@@ -17,7 +17,6 @@ export class UsersComponent implements OnInit{
 
     users: IUsers[];
 
-
     constructor(private dataService: DataService){}
 
     ngOnInit(){
@@ -26,7 +25,6 @@ export class UsersComponent implements OnInit{
             .subscribe((users: IUsers[]) => {
                 this.users = users;
             })
-
 
     }
 }
