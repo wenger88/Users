@@ -1,0 +1,29 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "firstName": "ted",
+      "lastName": "james",
+	  "email": "assd@gmail.com"
+      "avatar": "",
+      "address": "1234 Anywhere St.",
+      "city": " Phoenix ",
+      "state":  "Arizona",
+	  "jobTitle": "Front End Developer",
+	  "age": 25,
+	  "bio": "lorem ipsum ..."
+      "skill": [
+        {
+		  "id": 0,
+          "title": "HTML5",
+          "rating": 5
+        },
+        {
+		  "id": 1,
+          "title": "CSS3",
+          "rating": 7
+        }
+      ]
+    }
+  ]
+}
