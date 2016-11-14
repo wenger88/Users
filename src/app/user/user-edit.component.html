@@ -108,7 +108,21 @@
                             <!--<user-skill *ngFor="let skill of user.skills; let i = index" [skill]="skill"></user-skill>-->
 
                              <div class="clearfix">
-                                
+                                 <div class="col-sm-6">
+                                     <div class="form-group pull-left">
+                                         <label>Title</label>
+                                         <input type="text" class="form-control" name="title" ngModel #title>
+                                     </div>
+                                 </div>
+                                 <div class="col-sm-6 ">
+                                     <div class="form-group pull-right">
+                                         <label>Rating</label>
+                                         <input type="number" max="10" min="1" class="form-control " name="rating"  ngModel #rating>
+                                     </div>
+                                 </div>
+
+                                 <button type="button" class="btn btn-default" (click)="addSkill(title, rating)">Add Skill</button>
+
                              </div>
 
                          </fieldset>

@@ -42,7 +42,8 @@ export class UserEditComponent implements OnInit{
             .subscribe((status: boolean) => {
                 if (status){
                     this.userForm.form.markAsPristine();
-                    this.router.navigate(['/users']);
+                    /*this.router.navigate(['/users']);*/
+                    console.log(this.userForm.value);
                 }else {
                     this.errorMessage = 'Unable to save customer';
                 }
@@ -53,6 +54,20 @@ export class UserEditComponent implements OnInit{
     onCancel(event: Event){
         event.preventDefault();
         this.router.navigate(['/users']);
+    }
+
+    addSkill(title: HTMLInputElement, rating: HTMLInputElement){
+        let skill: any = {
+            'title': title.value,
+            'rating': rating.value
+        }
+
+        this.user.skills.push(skill);
+        title.value = null;
+        rating.value = null;
+
+        console.log(skill);
+
     }
 
 }
