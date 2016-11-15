@@ -80,6 +80,8 @@ export class UserEditComponent implements OnInit{
         this.userForm.form.markAsDirty();
     }
 
-
+    keyDownFunction(event: Event){
+        event.preventDefault();
+    }
 
 }

@@ -6,7 +6,7 @@
                 <div class="row">
                     <h2>User Edit</h2>
                 </div>
-                <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+                <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()" (keydown.enter)="keyDownFunction($event)">
                     <div class="row">
                         <fieldset>
                             <legend>Info</legend>
