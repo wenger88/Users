@@ -80,5 +80,9 @@ export class UserCreateComponent implements OnInit{
         this.router.navigate(['/users']);
     }
 
+    keyUpFunction(event: Event){
+        event.preventDefault();
+    }
+
 }
 
