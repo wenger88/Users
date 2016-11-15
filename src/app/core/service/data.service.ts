@@ -33,40 +33,11 @@ export class DataService{
 
     }
 
-
     updateUser(user: IUsers): Observable<boolean>{
         return this.http.put(this.usersUrl + '/' + user.id, user)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }
-
-    /*createUser(user: IUsers){
-
-        let body = JSON.stringify({
-            'id': user.id,
-            'firstName': user.firstName,
-            'lastName': user.lastName,
-            'email': user.email,
-            'age': user.age,
-            'jobTitle': user.jobTitle,
-            'bio': user.bio,
-            'avatar': user.avatar,
-            'address': user.address,
-            'city': user.city,
-            'state': user.city,
-            'skills': user.skills,
-
-        })
-
-        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
-        let options = new RequestOptions({ headers: headers, method: "post" });
-
-        return this.http.post(this.usersUrl, body, options)
-            .map(res => res.json())
-            .catch(this.handleError);
-
-    }*/
 
     addUser (body: Object): Observable<IUsers[]> {
         let bodyString = JSON.stringify(body); // Stringify payload
@@ -78,8 +49,10 @@ export class DataService{
             .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }
 
-
-
+    public deleteUser = (id: number): Observable<Response> => {
+        return this.http.delete(this.usersUrl + '/' + id)
+            .catch(this.handleError);
+    }
 
     private handleError(error: any) {
         console.error('server error:', error);

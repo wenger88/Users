@@ -4,8 +4,10 @@
 
 import {Component, OnInit} from "@angular/core";
 import {DataService} from "../core/service/data.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {IUsers} from "../shared/interfaces";
+import {Observable} from "rxjs";
+import 'rxjs/Rx'
 
 @Component({
     selector: 'user-details',
@@ -17,16 +19,22 @@ export class UserDetailsComponent implements OnInit{
 
     user: IUsers;
 
-    constructor(private dataService: DataService, private route: ActivatedRoute){}
+    constructor(private dataService: DataService,private router: Router ,private route: ActivatedRoute){}
 
     ngOnInit(){
 
         this.route.params.subscribe((params: Params) => {
-            //let id = +params['id'];
             this.dataService.getUser(params['id'])
                 .subscribe((user: IUsers) => this.user = user);
         });
 
+    }
+
+
+    onDelete(){
+        this.dataService.deleteUser(this.user.id).subscribe((res) =>{
+            this.router.navigate(['/users']);
+        });
     }
 
 
