@@ -27,8 +27,8 @@ import {RatingModule} from "ng2-rating";
 		BrowserModule,		
 		SharedModule,
 		RatingModule,
-		routing
-	],
+		routing,
+    ],
 	declarations: [
 		AppComponent,
 		PuppiesComponent,

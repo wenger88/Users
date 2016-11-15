@@ -19,9 +19,9 @@ import 'rxjs/Rx'
 
 export class UserCreateComponent implements OnInit{
 
-    user: IUsers = {
-        "skills": []
-    };
+    user = <IUsers>{
+        skills: []
+    }
 
     postMyCarToServer:string;
 

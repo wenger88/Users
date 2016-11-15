@@ -6,7 +6,7 @@
             <div class="">
                 <h2>User Details</h2>
                 <div class="clearfix">
-                    <button type="button" class="btn btn-danger" (click)="onDelete()">Delete User</button>
+                    <a type="button" class="btn btn-danger" (click)="onDelete()">Delete User</a>
                     <a [routerLink]="['/user-edit', user.id]" class="edit-button">Edit</a>
                 </div>
                 <div class="user-info">
