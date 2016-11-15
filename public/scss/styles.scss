@@ -27,3 +27,50 @@ body {
 			}
 		}
 }
+
+
+.user-edit-profile{
+	font-family: "Segoe UI";
+	line-height: 1.5;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	h2{
+		background: #4183D7;
+		color: #fff;
+		font-weight: bold;
+		display: block;
+		padding: 10px 5px;
+	}
+	fieldset{
+		margin: 20px 0;
+		legend{
+			font-weight: bold;
+			color: #555;
+		}
+		.col-sm-6{
+			padding: 0;
+			.form-group{
+				width: 90%;
+			}
+		}
+	}
+
+	table th:last-of-type, table td:last-of-type{
+		text-align: center;
+	}
+
+
+
+
+}
+
+.img-container{
+	width: 128px;
+	height: 128px;
+	margin: 20px 0;
+	img{
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+	}
+}

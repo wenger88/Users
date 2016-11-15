@@ -10,6 +10,21 @@
                     <div class="row">
                         <fieldset>
                             <legend>Info</legend>
+                            <div class="form-group">
+                                <label>Enter Image Url</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="avatar"
+                                       [(ngModel)]="user.avatar"
+                                       #avatar="ngModel"
+                                       required
+                                       pattern="(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpe?g|gif|png))(?:\?([^#]*))?(?:#(.*))?"
+                                >
+                                <div class="alert alert-danger" [hidden]="avatar.valid">Enter Valid Image Url</div>
+                                <div class="img-container" [hidden]="!avatar.valid">
+                                    <img class="img-responsive" [src]="user.avatar" alt="" >
+                                </div>
+                            </div>
                             <div class="clearfix">
                                 <div class="col-sm-6">
                                     <div class="form-group pull-left">
@@ -29,7 +44,7 @@
 
                             <div class="form-group">
                                 <label>Job Title</label>
-                                <input type="jobTitle" class="form-control" name="jobTitle" [(ngModel)]="user.jobTitle" #jobTitle="ngModel" required>
+                                <input type="text" class="form-control" name="jobTitle" [(ngModel)]="user.jobTitle" #jobTitle="ngModel" required>
                                 <div class="alert alert-danger" [hidden]="jobTitle.valid">Job Title is required</div>
                             </div>
                             <div class="form-group">

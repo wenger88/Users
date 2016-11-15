@@ -1,5 +1,6 @@
 
 .user-card{
+  /* width: 90%;*/
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 19px 14px 5px 5px rgba(0,0,0,.3);
@@ -10,7 +11,7 @@
     background: #4183D7;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-  h4{
+    h4{
       margin: 0;
       padding: 15px 10px;
       color: #fff;
@@ -24,6 +25,9 @@
     img{
       margin: 0 auto;
       border-radius: 10px;
+      max-width: 128px;
+      height: 128px;
+      width: 100%;
     }
   }
 

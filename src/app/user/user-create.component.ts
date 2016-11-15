@@ -41,12 +41,14 @@ export class UserCreateComponent implements OnInit{
         //this.dataService.addUser(this.user);
         this.dataService.addUser(this.user)
             .subscribe(
-                data => this.postMyCarToServer = JSON.stringify(data),
+                (data) => {
+                    this.postMyCarToServer = JSON.stringify(data);
+                    this.router.navigate(['/users']);
+                },
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")
             );
         console.log(this.user);
-        this.router.navigate(['/users']);
     }
 
     addSkill(title: HTMLInputElement, rating: HTMLInputElement){
@@ -66,6 +68,16 @@ export class UserCreateComponent implements OnInit{
 
         console.log(skill);
 
+    }
+
+    removeSkill(i: number){
+        this.user.skills.splice(i, 1);
+        this.userForm.form.markAsDirty();
+    }
+
+    onCancel(event: Event){
+        event.preventDefault();
+        this.router.navigate(['/users']);
     }
 
 }
